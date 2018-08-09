@@ -9,14 +9,15 @@ function repeat(operation, num) {
   }
   
   function trampoline(fn) {
-    if(fn && typeof fn === 'function')
+    if(fn && typeof fn === 'function'){
         fn = fn();
+    }
     return fn;
   }
   
   module.exports = function(operation, num) {
     // You probably want to call your trampoline here!
     return trampoline(function() {
-      return repeat(operation, num)
+      return repeat(operation, num);
     })
   }
